@@ -21,8 +21,8 @@ import javax.xml.ws.Holder;
  *
  * @author GermanO
  */
-@WebService(serviceName = "ws_productos")
-public class ws_productos 
+@WebService(serviceName = "consultarProductos")
+public class consultarProductos 
 {
     
     
