@@ -29,7 +29,7 @@ public class consultarProductos
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "consultarPRODUCTOS_LISTA")    
+    @WebMethod(operationName = "consultarPRODUCTOS_LISTA",action="http://localhost/consultarPRODUCTOS_LISTA")    
     public List<producto> consultarPRODUCTOS_LISTA(@WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA,
                                                    @WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA)
     {        
@@ -77,7 +77,7 @@ public class consultarProductos
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "consultarPRODUCTOS_ID")
+    @WebMethod(operationName = "consultarPRODUCTOS_ID",action="http://localhost/consultarPRODUCTOS_ID")
     public List<producto> consultarPRODUCTOS_ID(@WebParam(name = "ID") int ID) 
     {
         conectarBDD cn = new conectarBDD();        
@@ -122,7 +122,7 @@ public class consultarProductos
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "consultarPRODUCTOS_NOMBRE")
+    @WebMethod(operationName = "consultarPRODUCTOS_NOMBRE",action="http://localhost/consultarPRODUCTOS_NOMBRE")
     public List<producto> consultarPRODUCTOS_NOMBRE(@WebParam(name = "NOMBRE") String NOMBRE, @WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA, @WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA) 
     {
         conectarBDD cn = new conectarBDD();        
@@ -170,7 +170,7 @@ public class consultarProductos
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "consultarPRODUCTOS_DESCRIPCION")
+    @WebMethod(operationName = "consultarPRODUCTOS_DESCRIPCION",action="http://localhost/consultarPRODUCTOS_DESCRIPCION")
     public List<producto> consultarPRODUCTOS_DESCRIPCION(@WebParam(name = "DESCRIPCION") String DESCRIPCION, @WebParam(name = "NUMERO_PAGINA") int NUMERO_PAGINA, @WebParam(name = "TAMANO_PAGINA") int TAMANO_PAGINA) 
     {
         conectarBDD cn = new conectarBDD();        
