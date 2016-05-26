@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/Users/GermanO/Desktop/consultarProductos.wsdl" uri="wsdl/consultarProductos.wsdl"/>
-    <system systemId="http://192.168.0.8:8686/ServicioOMSProductosSA/consultarProductos?wsdl" uri="wsdl/192.168.0.8_8686/ServicioOMSProductosSA/consultarProductos.wsdl"/>
-    <system systemId="http://192.168.0.8:8686/ServicioOMSProductosSA/consultarProductos?xsd=1" uri="wsdl/192.168.0.8_8686/ServicioOMSProductosSA/consultarProductos.xsd_1.xsd"/>
-</catalog>
