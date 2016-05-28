@@ -30,9 +30,9 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
     </h:head>
     <h:body>
+        
         <div id="wrapper">
 
             <!-- Navigation -->
@@ -66,19 +66,44 @@
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
+                        <li class="active">
+                            <a href="faces/index.xhtml"><i class="fa fa-fw fa-file"></i> INICIO</a>
+                        </li>
                         <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Admon de Productos <i class="fa fa-fw fa-caret-down"></i></a>
-                            <ul id="demo" class="collapse">
+                            <a href="javascript:;" data-toggle="collapse" data-target="#productos"><i class="fa fa-fw fa-arrows-v"></i> Admon de Productos <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="productos" class="collapse">
                                 <li>
-                                    <a href="#">Búsqueda de Productos</a>
+                                    <a href="faces/listado_productos.xhtml">Búsqueda de Productos</a>
                                 </li>
                                 <li>
-                                    <a href="#">Registro de Productos</a>
+                                    <a href="faces/registro_productos.xhtml">Registro de Productos</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="active">
-                            <a href="#"><i class="fa fa-fw fa-file"></i> Administración Ordenes</a>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#campanhias"><i class="fa fa-fw fa-arrows-v"></i> Admon de Campañas <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="campanhias" class="collapse">
+                                <li>
+                                    <a href="faces/listado_campanhias.xhtml">Búsqueda de Campañas</a>
+                                </li>
+                                <li>
+                                    <a href="faces/registrar_campanhias.xhtml">Registro de Campañas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#clientes"><i class="fa fa-fw fa-arrows-v"></i> Admon de Clientes <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="clientes" class="collapse">
+                                <li>
+                                    <a href="faces/listado_productos.xhtml">Búsqueda de Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="faces/registro_productos.xhtml">Registro de Clientes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="listado_ordenes.xhtml"><i class="fa fa-fw fa-file"></i> Administración Ordenes</a>
                         </li>
                     </ul>
                 </div>
@@ -93,8 +118,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Registro
-                                <small>Productos</small>
+                                Inicio
+                                <small>Kalsonys</small>
                             </h1>
                             <ol class="breadcrumb">
                                 <li>
@@ -108,85 +133,11 @@
                     </div>
                     <!-- /.row -->
                     <!-- inicio página -->
-                    <h:form role="form">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">Nombre:</h:outputLabel>
-                                    <h:inputText class="form-control" id="nombreProd" value="#{beanProducto.nombre}" required="true" size="50">
-                                        <f:validateLength for="nombreProd" minimum="1"/>
-                                    </h:inputText>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">Categoria:</h:outputLabel>
-                                    <h:selectOneMenu id="categoriaProd" class="form-control" value="#{beanProducto.categoria}" required="true">
-                                        <f:selectItem itemValue="Televisor" itemLabel="Televisor" />
-                                        <f:selectItem itemValue="Computador" itemLabel="Computador" />	   							
-                                     </h:selectOneMenu>
-                                </div>
+                            <div class="col-lg-6">                                
+                                    dfvgbnmnbvfdsdfgh                                
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">Descripcion:</h:outputLabel>
-                                    <h:inputTextarea class="form-control" id="descProd" rows="5" cols="40" value="#{beanProducto.descripcion}" required="true">
-                                        <f:validateLength for="descProd" minimum="1"/>
-                                    </h:inputTextarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">Precio Lista:</h:outputLabel>
-                                    <h:inputText class="form-control" id="precioProd" value="#{beanProducto.precioLista}" required="true" size="35">
-                                        <f:validateLength for="precioProd" minimum="1"/>  
-                                    </h:inputText>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">Fabricante:</h:outputLabel>
-                                    <h:selectOneMenu id="fabricanteProd" class="form-control" value="#{beanProducto.fabricante}" required="true">
-                                        <f:selectItem itemValue="HP" itemLabel="HP" />
-                                        <f:selectItem itemValue="LG" itemLabel="LG" />
-                                        <f:selectItem itemValue="Sony" itemLabel="Sony" />
-                                        <f:selectItem itemValue="Samsung" itemLabel="Samsung" />	   							
-                                     </h:selectOneMenu>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <h:outputLabel for="idProd">URL Producto:</h:outputLabel>
-                                    <h:inputText class="form-control" id="urlProd" value="#{beanProducto.url}" required="true" size="50">
-                                        <f:validateLength for="urlProd" minimum="1"/>
-                                    </h:inputText>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h:commandButton class="btn btn-success" value="REGISTRAR" action="#{beanProducto.enviarTramaWS()}" style="width: 150px;height: 35px;">
-                                </h:commandButton>
-                                <br/><br/><br/><br/>
-                                
-                                <h:messages style="color:red;margin:8px;"/>
-                                <br/><br/>
-                                <h:outputText value="Respuesta: #{beanProducto.salidaConsumoWS}"/>
-            
-                                <div class="row">
-                                <div class="col-lg-12">
-                                    <h:outputLabel for="idProd">ID Producto:</h:outputLabel>
-                                    <h:inputText id="idProd" value="#{beanProducto.idProducto}" required="true" size="35">
-                                        <f:validateLength for="idProd" minimum="1"/>
-                                    </h:inputText>
-                                </div>
-                        </div>
-                            </div>
-                        </div>
-                    </h:form>
                     <!-- fin página -->
                 </div>
                 <!-- /.container-fluid -->

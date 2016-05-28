@@ -10,7 +10,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-        <title>Registro Productos</title>
+        <title>Registrar Campañas</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -66,7 +66,7 @@
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
-                        <li class="active">
+                        <li>
                             <a href="faces/index.xhtml"><i class="fa fa-fw fa-file"></i> INICIO</a>
                         </li>
                         <li>
@@ -80,7 +80,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="javascript:;" data-toggle="collapse" data-target="#campanhias"><i class="fa fa-fw fa-arrows-v"></i> Admon de Campañas <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="campanhias" class="collapse">
                                 <li>
@@ -95,10 +95,10 @@
                             <a href="javascript:;" data-toggle="collapse" data-target="#clientes"><i class="fa fa-fw fa-arrows-v"></i> Admon de Clientes <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="clientes" class="collapse">
                                 <li>
-                                    <a href="faces/listado_productos.xhtml">Búsqueda de Clientes</a>
+                                    <a href="faces/listado_clientes.xhtml">Búsqueda de Clientes</a>
                                 </li>
                                 <li>
-                                    <a href="faces/registro_productos.xhtml">Registro de Clientes</a>
+                                    <a href="faces/registro_clientes.xhtml">Registro de Clientes</a>
                                 </li>
                             </ul>
                         </li>
@@ -118,26 +118,77 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Inicio
-                                <small>Kalsonys</small>
+                                Registro
+                                <small>Campañas</small>
                             </h1>
                             <ol class="breadcrumb">
                                 <li>
-                                    <i class="fa fa-dashboard"></i>  <a href="#">Administración de Productos</a>
+                                    <i class="fa fa-dashboard"></i>  <a href="#">Administración de Campañas</a>
                                 </li>
                                 <li class="active">
-                                    <i class="fa fa-file"></i> Registro Productos
+                                    <i class="fa fa-file"></i> Registrar Campañas
                                 </li>
                             </ol>
                         </div>
                     </div>
                     <!-- /.row -->
                     <!-- inicio página -->
+                    <h:form role="form">
                         <div class="row">
-                            <div class="col-lg-6">                                
-                                    dfvgbnmnbvfdsdfgh                                
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="nombreCamp">Nombre:</h:outputLabel>
+                                    <h:inputText class="form-control" id="nombreCamp" value="1" required="true" size="50">
+                                        <f:validateLength for="nombreCamp" minimum="1"/>
+                                    </h:inputText>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="estadoCamp">Estado:</h:outputLabel>
+                                    <h:selectOneMenu id="estadoCamp" class="form-control" value="11" required="true">
+                                        <f:selectItem itemValue="1" itemLabel="1" />
+                                        <f:selectItem itemValue="2" itemLabel="2" />	   							
+                                     </h:selectOneMenu>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="inicioCamp">Fecha Inicio:</h:outputLabel>
+                                    <h:inputText class="form-control" id="inicioCamp" value="1" required="true" size="50">
+                                        <f:validateLength for="inicioCamp" minimum="1"/>
+                                    </h:inputText>
+                                </div>
+                                <div class="form-group">
+                                    <h:outputLabel for="vencimientoCamp">Fecha Vencimiento:</h:outputLabel>
+                                    <h:inputText class="form-control" id="vencimientoCamp" value="1" required="true" size="50">
+                                        <f:validateLength for="vencimientoCamp" minimum="1"/>
+                                    </h:inputText>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="descCamp">Descripcion:</h:outputLabel>
+                                    <h:inputTextarea class="form-control" id="descCamp" rows="5" cols="40" value="#{beanProducto.descripcion}" required="true">
+                                        <f:validateLength for="descCamp" minimum="1"/>
+                                    </h:inputTextarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h:commandButton class="btn btn-success" value="REGISTRAR" action="#{beanProducto.enviarTramaWS()}" style="width: 150px;height: 35px;">
+                                </h:commandButton>
+                                <br/><br/><br/><br/>
+                                
+                                <h:messages style="color:red;margin:8px;"/>
+                                <br/><br/>
+                                <h:outputText value="Respuesta: XXX"/>
+                            </div>
+                        </div>
+                    </h:form>
                     <!-- fin página -->
                 </div>
                 <!-- /.container-fluid -->

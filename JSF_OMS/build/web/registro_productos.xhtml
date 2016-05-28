@@ -66,10 +66,10 @@
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
-                        <li class="active">
+                        <li>
                             <a href="faces/index.xhtml"><i class="fa fa-fw fa-file"></i> INICIO</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="javascript:;" data-toggle="collapse" data-target="#productos"><i class="fa fa-fw fa-arrows-v"></i> Admon de Productos <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="productos" class="collapse">
                                 <li>
@@ -118,8 +118,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Inicio
-                                <small>Kalsonys</small>
+                                Registro
+                                <small>Productos</small>
                             </h1>
                             <ol class="breadcrumb">
                                 <li>
@@ -133,11 +133,85 @@
                     </div>
                     <!-- /.row -->
                     <!-- inicio página -->
+                    <h:form role="form">
                         <div class="row">
-                            <div class="col-lg-6">                                
-                                    dfvgbnmnbvfdsdfgh                                
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">Nombre:</h:outputLabel>
+                                    <h:inputText class="form-control" id="nombreProd" value="#{beanProducto.nombre}" required="true" size="50">
+                                        <f:validateLength for="nombreProd" minimum="1"/>
+                                    </h:inputText>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">Categoria:</h:outputLabel>
+                                    <h:selectOneMenu id="categoriaProd" class="form-control" value="#{beanProducto.categoria}" required="true">
+                                        <f:selectItem itemValue="Televisor" itemLabel="Televisor" />
+                                        <f:selectItem itemValue="Computador" itemLabel="Computador" />	   							
+                                     </h:selectOneMenu>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">Descripcion:</h:outputLabel>
+                                    <h:inputTextarea class="form-control" id="descProd" rows="5" cols="40" value="#{beanProducto.descripcion}" required="true">
+                                        <f:validateLength for="descProd" minimum="1"/>
+                                    </h:inputTextarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">Precio Lista:</h:outputLabel>
+                                    <h:inputText class="form-control" id="precioProd" value="#{beanProducto.precioLista}" required="true" size="35">
+                                        <f:validateLength for="precioProd" minimum="1"/>  
+                                    </h:inputText>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">Fabricante:</h:outputLabel>
+                                    <h:selectOneMenu id="fabricanteProd" class="form-control" value="#{beanProducto.fabricante}" required="true">
+                                        <f:selectItem itemValue="HP" itemLabel="HP" />
+                                        <f:selectItem itemValue="LG" itemLabel="LG" />
+                                        <f:selectItem itemValue="Sony" itemLabel="Sony" />
+                                        <f:selectItem itemValue="Samsung" itemLabel="Samsung" />	   							
+                                     </h:selectOneMenu>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <h:outputLabel for="idProd">URL Producto:</h:outputLabel>
+                                    <h:inputText class="form-control" id="urlProd" value="#{beanProducto.url}" required="true" size="50">
+                                        <f:validateLength for="urlProd" minimum="1"/>
+                                    </h:inputText>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h:commandButton class="btn btn-success" value="REGISTRAR" action="#{beanProducto.enviarTramaWS()}" style="width: 150px;height: 35px;">
+                                </h:commandButton>
+                                <br/><br/><br/><br/>
+                                
+                                <h:messages style="color:red;margin:8px;"/>
+                                <br/><br/>
+                                <h:outputText value="Respuesta: #{beanProducto.salidaConsumoWS}"/>
+            
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h:outputLabel for="idProd">ID Producto:</h:outputLabel>
+                                        <h:inputText id="idProd" value="#{beanProducto.idProducto}" required="true" size="35">
+                                            <f:validateLength for="idProd" minimum="1"/>
+                                        </h:inputText>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
                     <!-- fin página -->
                 </div>
                 <!-- /.container-fluid -->
