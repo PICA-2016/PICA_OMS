@@ -385,6 +385,20 @@
                                 </tr>
                             </tbody>
                         </table>
+                    
+                    <div class="row">
+                            <div class="col-lg-12">
+                                <h:form>
+                                    <h:commandButton class="btn btn-success" value="ir" action="#{beanProducto.getListadoProductosWS()}" style="width: 150px;height: 35px;">
+                                    </h:commandButton>
+                                </h:form>
+                                <br/><br/><br/><br/>
+                                
+                                <h:messages style="color:red;margin:8px;"/>
+                                <br/><br/>
+                                <h:outputText value="Respuesta: #{beanProducto.salidaConsumoWS}"/>
+                            </div>
+                        </div>
                     <!-- fin página -->
                 </div>
                 <!-- /.container-fluid -->

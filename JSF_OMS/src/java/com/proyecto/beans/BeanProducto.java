@@ -22,8 +22,7 @@ public class BeanProducto implements java.io.Serializable{
     
     @EJB
     ProductoBeanInterface productoBeanInterface;
-    
-    private String idProducto;
+        
     private String nombre;
     private String descripcion;
     private String categoria;
@@ -34,14 +33,6 @@ public class BeanProducto implements java.io.Serializable{
     private String salidaConsumoWS;
     
     public BeanProducto() {
-    }
-
-    public String getIdProducto() {
-        return idProducto;
-    }
-
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
     }
 
     public String getNombre() {
@@ -94,7 +85,6 @@ public class BeanProducto implements java.io.Serializable{
     
     public void enviarTramaWS(){
         List<String>infoProducto = new ArrayList<String>();
-        infoProducto.add(getIdProducto());
         infoProducto.add(getNombre());
         infoProducto.add(getDescripcion());
         infoProducto.add(getCategoria());
@@ -102,6 +92,16 @@ public class BeanProducto implements java.io.Serializable{
         infoProducto.add(getFabricante());
         infoProducto.add(getUrl());
         String respuesta = productoBeanInterface.consumirWS(infoProducto);
+        System.out.println("Salida Test del WS......"+respuesta);
+        setSalidaConsumoWS(respuesta);
+        
+        
+    }
+    
+    public void getListadoProductosWS(){
+        List<String>infoProducto = new ArrayList<String>();
+        infoProducto.add("hola");
+        String respuesta = productoBeanInterface.consumirListadoProductosWS(infoProducto);
         System.out.println("Salida Test del WS......"+respuesta);
         setSalidaConsumoWS(respuesta);
         

@@ -14,4 +14,5 @@ import javax.ejb.Remote;
 @Remote
 public interface ProductoBeanInterface {
     public String consumirWS(List<String>data);
+    public String consumirListadoProductosWS(List<String>data);
 }
