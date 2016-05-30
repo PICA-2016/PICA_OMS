@@ -39,7 +39,7 @@ public class BeanConsultaProductos  implements java.io.Serializable {
         System.out.println("hola");
         try {   
             List<ConsultaProXNombre> lista = new ArrayList<>();            
-            listaProductos = wsBuscarproductosXNombre("", 1,10);
+            listaProductos = wsBuscarproductosXNombre("", 1,100);
             for (ConsultaProXNombre consultaProXNombre : listaProductos) {
                 System.out.println("Producto : " + consultaProXNombre.getNOMBRE());   
             }
