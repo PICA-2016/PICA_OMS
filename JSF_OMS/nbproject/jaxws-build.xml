@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/pica/dss/productos"/>
         <delete dir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-consultasEspecialesProductos"/>
+    <target name="wsimport-client-administrarProductos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarProductos" destdir="${build.generated.dir}/jax-wsCache/administrarProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.85.0.103:9763/services/administrarProductos?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/administrarProductos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-administrarProductos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/pica/dss/productos"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-consultasEspecialesProductos, wsimport-client-administrarProductos"/>
 </project>

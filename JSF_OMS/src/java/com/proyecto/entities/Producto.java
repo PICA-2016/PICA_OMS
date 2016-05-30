@@ -5,13 +5,14 @@
  */
 package com.proyecto.entities;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
  *
  * @author luu
  */
-public class Producto {
+public class Producto implements Serializable{
     private BigInteger id;
     private String nombre;
     private String descripcion;

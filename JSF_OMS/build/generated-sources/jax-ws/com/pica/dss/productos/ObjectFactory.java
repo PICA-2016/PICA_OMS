@@ -24,11 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ConsultaProtosXDes_QNAME = new QName("http://pica.com/dss/Productos", "ConsultaProtosXDes");
-    private final static QName _ConsultaProsXNombre_QNAME = new QName("http://pica.com/dss/Productos", "ConsultaProsXNombre");
-    private final static QName _RankingProductos_QNAME = new QName("http://pica.com/dss/Productos", "RankingProductos");
-    private final static QName _ConsultaProductosXID_QNAME = new QName("http://pica.com/dss/Productos", "ConsultaProductosXID");
-    private final static QName _RankingCategorias_QNAME = new QName("http://pica.com/dss/Productos", "RankingCategorias");
+    private final static QName _GrpProductos_QNAME = new QName("http://pica.com/dss/Productos", "grpProductos");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.pica.dss.productos
@@ -38,168 +34,60 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WsBuscarProductosXDescripcion }
+     * Create an instance of {@link WsActualizarProducto }
      * 
      */
-    public WsBuscarProductosXDescripcion createWsBuscarProductosXDescripcion() {
-        return new WsBuscarProductosXDescripcion();
+    public WsActualizarProducto createWsActualizarProducto() {
+        return new WsActualizarProducto();
     }
 
     /**
-     * Create an instance of {@link ConsultaProtosXDes }
+     * Create an instance of {@link GrpProductos }
      * 
      */
-    public ConsultaProtosXDes createConsultaProtosXDes() {
-        return new ConsultaProtosXDes();
+    public GrpProductos createGrpProductos() {
+        return new GrpProductos();
     }
 
     /**
-     * Create an instance of {@link WsBuscarproductosXNombre }
+     * Create an instance of {@link WsConsultaListaProducto }
      * 
      */
-    public WsBuscarproductosXNombre createWsBuscarproductosXNombre() {
-        return new WsBuscarproductosXNombre();
+    public WsConsultaListaProducto createWsConsultaListaProducto() {
+        return new WsConsultaListaProducto();
     }
 
     /**
-     * Create an instance of {@link ConsultaProsXNombre }
+     * Create an instance of {@link WsInsertarProducto }
      * 
      */
-    public ConsultaProsXNombre createConsultaProsXNombre() {
-        return new ConsultaProsXNombre();
+    public WsInsertarProducto createWsInsertarProducto() {
+        return new WsInsertarProducto();
     }
 
     /**
-     * Create an instance of {@link WsRankingProductos }
+     * Create an instance of {@link WsEliminarProducto }
      * 
      */
-    public WsRankingProductos createWsRankingProductos() {
-        return new WsRankingProductos();
+    public WsEliminarProducto createWsEliminarProducto() {
+        return new WsEliminarProducto();
     }
 
     /**
-     * Create an instance of {@link RankingProductos }
+     * Create an instance of {@link Producto }
      * 
      */
-    public RankingProductos createRankingProductos() {
-        return new RankingProductos();
+    public Producto createProducto() {
+        return new Producto();
     }
 
     /**
-     * Create an instance of {@link WsBuscarproductoXID }
+     * Create an instance of {@link JAXBElement }{@code <}{@link GrpProductos }{@code >}}
      * 
      */
-    public WsBuscarproductoXID createWsBuscarproductoXID() {
-        return new WsBuscarproductoXID();
-    }
-
-    /**
-     * Create an instance of {@link ConsultaProductosXID }
-     * 
-     */
-    public ConsultaProductosXID createConsultaProductosXID() {
-        return new ConsultaProductosXID();
-    }
-
-    /**
-     * Create an instance of {@link WsRankingCategorias }
-     * 
-     */
-    public WsRankingCategorias createWsRankingCategorias() {
-        return new WsRankingCategorias();
-    }
-
-    /**
-     * Create an instance of {@link RankingCategorias }
-     * 
-     */
-    public RankingCategorias createRankingCategorias() {
-        return new RankingCategorias();
-    }
-
-    /**
-     * Create an instance of {@link ConsultaProXDes }
-     * 
-     */
-    public ConsultaProXDes createConsultaProXDes() {
-        return new ConsultaProXDes();
-    }
-
-    /**
-     * Create an instance of {@link ConsultaProXNombre }
-     * 
-     */
-    public ConsultaProXNombre createConsultaProXNombre() {
-        return new ConsultaProXNombre();
-    }
-
-    /**
-     * Create an instance of {@link RankingProducto }
-     * 
-     */
-    public RankingProducto createRankingProducto() {
-        return new RankingProducto();
-    }
-
-    /**
-     * Create an instance of {@link ConsultaProductoXID }
-     * 
-     */
-    public ConsultaProductoXID createConsultaProductoXID() {
-        return new ConsultaProductoXID();
-    }
-
-    /**
-     * Create an instance of {@link RankingCategoria }
-     * 
-     */
-    public RankingCategoria createRankingCategoria() {
-        return new RankingCategoria();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultaProtosXDes }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "ConsultaProtosXDes")
-    public JAXBElement<ConsultaProtosXDes> createConsultaProtosXDes(ConsultaProtosXDes value) {
-        return new JAXBElement<ConsultaProtosXDes>(_ConsultaProtosXDes_QNAME, ConsultaProtosXDes.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultaProsXNombre }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "ConsultaProsXNombre")
-    public JAXBElement<ConsultaProsXNombre> createConsultaProsXNombre(ConsultaProsXNombre value) {
-        return new JAXBElement<ConsultaProsXNombre>(_ConsultaProsXNombre_QNAME, ConsultaProsXNombre.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RankingProductos }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "RankingProductos")
-    public JAXBElement<RankingProductos> createRankingProductos(RankingProductos value) {
-        return new JAXBElement<RankingProductos>(_RankingProductos_QNAME, RankingProductos.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConsultaProductosXID }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "ConsultaProductosXID")
-    public JAXBElement<ConsultaProductosXID> createConsultaProductosXID(ConsultaProductosXID value) {
-        return new JAXBElement<ConsultaProductosXID>(_ConsultaProductosXID_QNAME, ConsultaProductosXID.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RankingCategorias }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "RankingCategorias")
-    public JAXBElement<RankingCategorias> createRankingCategorias(RankingCategorias value) {
-        return new JAXBElement<RankingCategorias>(_RankingCategorias_QNAME, RankingCategorias.class, null, value);
+    @XmlElementDecl(namespace = "http://pica.com/dss/Productos", name = "grpProductos")
+    public JAXBElement<GrpProductos> createGrpProductos(GrpProductos value) {
+        return new JAXBElement<GrpProductos>(_GrpProductos_QNAME, GrpProductos.class, null, value);
     }
 
 }

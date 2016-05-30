@@ -6,23 +6,64 @@
     <h:head></h:head>
     <h:body>
         <h:form>
-            <p:dataTable id="userDatatable" lazy="true" paginator="true" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rows="5" rowsPerPageTemplate="5,10,15" value="#{lazyDatatableController}" var="user" widgetVar="userDatatable">          
-                <p:column headerText="ID" filterBy="#{user.id}" sortBy="#{user.id}">
-                    #{user.id}
-                </p:column>
-                <p:column headerText="Nombre" filterBy="#{user.nombre}" sortBy="#{user.nombre}">
-                    #{user.nombre}
-                </p:column>
-                <p:column headerText="Categoria">
-                    #{user.categoria}
-                </p:column>
-                <p:column headerText="Precio">
-                    #{user.precioLista}
-                </p:column>
-                <p:column headerText="Fabricante">
-                    #{user.fabricante}
-                </p:column>                                   
-            </p:dataTable>
+            <p:ajaxStatus>
+                <p:dataTable id="productoDatatable" lazy="true" paginator="true" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rows="5" rowsPerPageTemplate="5,10,15" value="#{lazyDatatableController}" var="producto" widgetVar="productoDatatable" editable="true">                     
+                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Buscar por Id: " />
+                            <p:inputText id="idFiltro" value="#{lazyDatatableController.filtroId}" style="width:150px" placeholder="Enter keyword">          
+                            </p:inputText>
+                            <p:commandButton update="nombreFiltro" value="Buscar" id="botonFiltroId" actionListener="#{lazyDatatableController.filtroIdAction}"  onsuccess="PF('productoDatatable').filter();" icon="ui-icon-disk" />
+                        </p:outputPanel>
+                        <p:outputPanel>
+                            <h:outputText value="Buscar por Nombre: " />
+                            <p:inputText id="nombreFiltro" value="#{lazyDatatableController.filtroName}" style="width:150px" placeholder="Enter keyword">
+                            </p:inputText>
+                            <p:commandButton update="idFiltro" value="Buscar" id="botonFiltroNombre" actionListener="#{lazyDatatableController.filtroNombreAction}"  onsuccess="PF('productoDatatable').filter();" icon="ui-icon-disk" />
+                        </p:outputPanel>
+
+                    </f:facet>     
+                    <p:ajax event="rowEdit" listener="#{lazyDatatableController.onRowEdit}" />
+                    <p:ajax event="rowEditCancel" listener="#{lazyDatatableController.onRowCancel}" />                
+                    <p:column headerText="ID">    
+                        <h:outputText value='#{producto.id}'/>
+                    </p:column>
+                    <p:column headerText="Nombre"> 
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{producto.nombre}" /></f:facet>
+                            <f:facet name="input"><p:inputText id="nombreColumn" value="#{producto.nombre}" style="width:100%"/></f:facet>
+                        </p:cellEditor>                                       
+                    </p:column>
+                    <p:column headerText="Categoria">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{producto.categoria}" /></f:facet>
+                            <f:facet name="input"><p:inputText id="categoriaColumn" value="#{producto.categoria}" style="width:100%"/></f:facet>
+                        </p:cellEditor>                                                                                
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{producto.precioLista}">
+                                </h:outputText>
+                            </f:facet>
+                            <f:facet name="input"><p:inputText id="precioColumn" value="#{producto.precioLista}" style="width:100%"/></f:facet>
+                        </p:cellEditor>                           
+                    </p:column>
+                    <p:column headerText="Fabricante">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{producto.fabricante}" /></f:facet>
+                            <f:facet name="input"><p:inputText id="fabricanteColumn" value="#{producto.fabricante}" style="width:100%"/></f:facet>
+                        </p:cellEditor>                                          
+                    </p:column> 
+                    <p:column style="width:32px">
+                        <p:rowEditor />
+                    </p:column>                
+                </p:dataTable>
+            </p:ajaxStatus>    
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />            
+            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                <p:graphicImage name="loader.gif" />
+            </p:dialog>            
         </h:form>
     </h:body>
 </html>

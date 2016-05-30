@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:9763/services/consultasEspecialesProductos?wsdl" uri="src/conf/xml-resources/web-service-references/consultasEspecialesProductos/wsdl/localhost_9763/services/consultasEspecialesProductos.wsdl"/>
+    <system systemId="http://10.85.0.103:9763/services/administrarProductos?wsdl" uri="src/conf/xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl"/>
 </catalog>
