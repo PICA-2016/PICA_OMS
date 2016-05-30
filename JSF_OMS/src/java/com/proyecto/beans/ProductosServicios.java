@@ -52,6 +52,7 @@ public class ProductosServicios {
                     Producto producto = new Producto();
                     producto.setId(consultaProXNombre.getID());
                     producto.setNombre(consultaProXNombre.getNOMBRE());
+                    producto.setProdId(consultaProXNombre.getPRODUCTOID());
                     producto.setDescripcion(consultaProXNombre.getDESCRIPCION());
                     producto.setCategoria(consultaProXNombre.getCATEGORIA());
                     producto.setFabricante(consultaProXNombre.getFABRICANTE());
@@ -60,11 +61,24 @@ public class ProductosServicios {
                     lista.add(producto);
                     System.out.println("Producto : " + consultaProXNombre.getNOMBRE());
                 }
+                if(0 == listaNombre.size()){
+                    Producto producto = new Producto();
+                    producto.setId(BigInteger.ONE);
+                    producto.setProdId(BigInteger.ZERO);
+                    producto.setNombre("");
+                    producto.setDescripcion("");
+                    producto.setCategoria("");
+                    producto.setFabricante("");
+                    producto.setPrecioLista(BigInteger.ZERO);
+                    producto.setNumReg(1);
+                    lista.add(producto);
+                }                   
             } else if (filtroIdActivo) {
                 listaId = this.wsBuscarproductoXID(filtroIdNumber);
                 for (ConsultaProductoXID consultaProductoXID : listaId) {
                     Producto producto = new Producto();
                     producto.setId(consultaProductoXID.getID());
+                    producto.setProdId(consultaProductoXID.getPRODUCTOID());
                     producto.setNombre(consultaProductoXID.getNOMBRE());
                     producto.setDescripcion(consultaProductoXID.getDESCRIPCION());
                     producto.setCategoria(consultaProductoXID.getCATEGORIA());
@@ -73,11 +87,24 @@ public class ProductosServicios {
                     producto.setNumReg(1);
                     lista.add(producto);
                 }
+                if(0 == listaId.size()){
+                    Producto producto = new Producto();
+                    producto.setId(BigInteger.ONE);
+                    producto.setProdId(BigInteger.ZERO);
+                    producto.setNombre("");
+                    producto.setDescripcion("");
+                    producto.setCategoria("");
+                    producto.setFabricante("");
+                    producto.setPrecioLista(BigInteger.ZERO);
+                    producto.setNumReg(1);
+                    lista.add(producto);
+                }                
             } else {
                 listaNombre = this.wsBuscarproductosXNombre(filtroNombre, first, pageSize);
                 for (ConsultaProXNombre consultaProXNombre : listaNombre) {
                     Producto producto = new Producto();
                     producto.setId(consultaProXNombre.getID());
+                    producto.setProdId(consultaProXNombre.getPRODUCTOID());
                     producto.setNombre(consultaProXNombre.getNOMBRE());
                     producto.setDescripcion(consultaProXNombre.getDESCRIPCION());
                     producto.setCategoria(consultaProXNombre.getCATEGORIA());
@@ -86,6 +113,18 @@ public class ProductosServicios {
                     producto.setNumReg(consultaProXNombre.getCANTIDADREGISTROS().intValue());
                     lista.add(producto);
                     System.out.println("Producto : " + consultaProXNombre.getNOMBRE());
+                }
+                if(listaNombre.isEmpty()){
+                    Producto producto = new Producto();
+                    producto.setId(BigInteger.ONE);
+                    producto.setProdId(BigInteger.ZERO);
+                    producto.setNombre("");
+                    producto.setDescripcion("");
+                    producto.setCategoria("");
+                    producto.setFabricante("");
+                    producto.setPrecioLista(BigInteger.ZERO);
+                    producto.setNumReg(1);
+                    lista.add(producto);
                 }
             }
         } catch (DataServiceFault ex) {

@@ -14,6 +14,7 @@ import java.math.BigInteger;
  */
 public class Producto implements Serializable{
     private BigInteger id;
+    private BigInteger prodId;
     private String nombre;
     private String descripcion;
     private String categoria;
@@ -90,4 +91,14 @@ public class Producto implements Serializable{
     public void setNumReg(int numReg) {
         this.numReg = numReg;
     }
+
+    public BigInteger getProdId() {
+        return prodId;
+    }
+
+    public void setProdId(BigInteger prodId) {
+        this.prodId = prodId;
+    }
+    
+    
 }

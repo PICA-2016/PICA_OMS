@@ -52,7 +52,14 @@ public class LazyDatatableController extends LazyDataModel<Producto> implements 
         ProductosServicios servicio = new ProductosServicios();
         List<Producto> productos = servicio.listarProductos(numPagina, pageSize,
                 sortField, sortOrder, filters, filtroId, filtroName, filtroIdActivo);
-        this.setRowCount(productos.get(0).getNumReg());
+        int numRegistros = 0;
+        if(productos.get(0).getNumReg() == 0){
+            numRegistros = 1;
+            productos.clear();
+        }else{
+            numRegistros = productos.get(0).getNumReg();
+        }
+        this.setRowCount(numRegistros);
         //setRowCount(userService.countUsers(filters));
         return productos;
     }   
