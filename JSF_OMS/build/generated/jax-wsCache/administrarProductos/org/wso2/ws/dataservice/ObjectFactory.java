@@ -42,19 +42,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DataServiceFault.SourceDataService }
-     * 
-     */
-    public DataServiceFault.SourceDataService createDataServiceFaultSourceDataService() {
-        return new DataServiceFault.SourceDataService();
-    }
-
-    /**
      * Create an instance of {@link DATASERVICERESPONSE }
      * 
      */
     public DATASERVICERESPONSE createDATASERVICERESPONSE() {
         return new DATASERVICERESPONSE();
+    }
+
+    /**
+     * Create an instance of {@link DataServiceFault.SourceDataService }
+     * 
+     */
+    public DataServiceFault.SourceDataService createDataServiceFaultSourceDataService() {
+        return new DataServiceFault.SourceDataService();
     }
 
     /**

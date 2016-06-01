@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login</title>
+        
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Custom CSS -->
+        <link href="css/sb-admin.css" rel="stylesheet" />
+
+        <!-- Morris Charts CSS -->
+        <link href="css/plugins/morris.css" rel="stylesheet" />
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    </h:head>
+    <h:body>
+                <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--
+        <div class="container-fluid">
+        -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+            <h3>Login De Usuario</h3>
+            <h:form role="form">
+                
+                <h:outputLabel for="idProd">Usuario:</h:outputLabel>
+                <h:inputText id="usuario" class="form-control" value="#{iniciarMB.usuario}" required="true" size="20"/>
+                <br/>
+                <h:outputLabel for="idProd">Contraseña:</h:outputLabel>
+                <h:inputText class="form-control" value="#{iniciarMB.pass}" required="true" size="20"/>
+                <br/>
+                <h:commandButton class="btn btn-success" value="Ingresar" action="#{iniciarMB.Login}"/>
+                <br/>
+                <h:messages style="color:red;margin:8px;"/>
+                <h:outputText value="#{iniciarMB.respuesta}"/>
+                
+            </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+

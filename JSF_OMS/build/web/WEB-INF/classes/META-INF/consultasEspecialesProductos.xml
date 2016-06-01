@@ -1,0 +1,420 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://pica.com/dss/Productos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://pica.com/dss/Productos">
+    <wsdl:documentation/>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://pica.com/dss/Productos">
+            <xs:element name="wsBuscarProductosXDescripcion">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                        <xs:element name="NUMERO_PAGINA" nillable="true" type="xs:int"/>
+                        <xs:element name="TAMANO_PAGINA" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ConsultaProtosXDes" type="ns0:ConsultaProtosXDes"/>
+            <xs:complexType name="ConsultaProtosXDes">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ConsultaProXDes" type="ns0:ConsultaProXDes"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ConsultaProXDes">
+                <xs:sequence>
+                    <xs:element name="CANTIDAD_REGISTROS" nillable="true" type="xs:integer"/>
+                    <xs:element name="ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODUCTO_ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                    <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                    <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                    <xs:element name="PRECIO_LISTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsBuscarproductosXNombre">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                        <xs:element name="NUMERO_PAGINA" nillable="true" type="xs:int"/>
+                        <xs:element name="TAMANO_PAGINA" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ConsultaProsXNombre" type="ns0:ConsultaProsXNombre"/>
+            <xs:complexType name="ConsultaProsXNombre">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ConsultaProXNombre" type="ns0:ConsultaProXNombre"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ConsultaProXNombre">
+                <xs:sequence>
+                    <xs:element name="CANTIDAD_REGISTROS" nillable="true" type="xs:integer"/>
+                    <xs:element name="ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODUCTO_ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                    <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                    <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                    <xs:element name="PRECIO_LISTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsRankingProductos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="FECHAINI" nillable="true" type="xs:string"/>
+                        <xs:element name="FECHAFIN" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RankingProductos" type="ns0:RankingProductos"/>
+            <xs:complexType name="RankingProductos">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="RankingProducto" type="ns0:RankingProducto"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RankingProducto">
+                <xs:sequence>
+                    <xs:element name="CANTIDADORDENES" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODID" nillable="true" type="xs:integer"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsBuscarproductoXID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PRODUCTO_ID" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ConsultaProductosXID" type="ns0:ConsultaProductosXID"/>
+            <xs:complexType name="ConsultaProductosXID">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ConsultaProductoXID" type="ns0:ConsultaProductoXID"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ConsultaProductoXID">
+                <xs:sequence>
+                    <xs:element name="ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODUCTO_ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                    <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                    <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                    <xs:element name="PRECIO_LISTA" nillable="true" type="xs:string"/>
+                    <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsRankingCategorias">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="FECHAINI" nillable="true" type="xs:string"/>
+                        <xs:element name="FECHAFIN" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RankingCategorias" type="ns0:RankingCategorias"/>
+            <xs:complexType name="RankingCategorias">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="RankingCategoria" type="ns0:RankingCategoria"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RankingCategoria">
+                <xs:sequence>
+                    <xs:element name="CANTIDADORDENES" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODUCTCATEGORIA" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+            <xs:element name="DataServiceFault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="current_params" type="xs:string"/>
+                        <xs:element name="current_request_name" type="xs:string"/>
+                        <xs:element name="nested_exception" type="xs:string"/>
+                        <xs:element name="source_data_service">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="location" type="xs:string"/>
+                                    <xs:element name="default_namespace" type="xs:string"/>
+                                    <xs:element name="description" type="xs:string"/>
+                                    <xs:element name="data_service_name" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ds_code" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="REQUEST_STATUS" type="xs:string"/>
+            <xs:element name="DATA_SERVICE_RESPONSE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="wsBuscarProductosXDescripcionRequest">
+        <wsdl:part name="parameters" element="ns0:wsBuscarProductosXDescripcion"/>
+    </wsdl:message>
+    <wsdl:message name="wsBuscarProductosXDescripcionResponse">
+        <wsdl:part name="parameters" element="ns0:ConsultaProtosXDes"/>
+    </wsdl:message>
+    <wsdl:message name="DataServiceFault">
+        <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+    </wsdl:message>
+    <wsdl:message name="wsBuscarproductosXNombreRequest">
+        <wsdl:part name="parameters" element="ns0:wsBuscarproductosXNombre"/>
+    </wsdl:message>
+    <wsdl:message name="wsBuscarproductosXNombreResponse">
+        <wsdl:part name="parameters" element="ns0:ConsultaProsXNombre"/>
+    </wsdl:message>
+    <wsdl:message name="wsRankingProductosRequest">
+        <wsdl:part name="parameters" element="ns0:wsRankingProductos"/>
+    </wsdl:message>
+    <wsdl:message name="wsRankingProductosResponse">
+        <wsdl:part name="parameters" element="ns0:RankingProductos"/>
+    </wsdl:message>
+    <wsdl:message name="wsBuscarproductoXIDRequest">
+        <wsdl:part name="parameters" element="ns0:wsBuscarproductoXID"/>
+    </wsdl:message>
+    <wsdl:message name="wsBuscarproductoXIDResponse">
+        <wsdl:part name="parameters" element="ns0:ConsultaProductosXID"/>
+    </wsdl:message>
+    <wsdl:message name="wsRankingCategoriasRequest">
+        <wsdl:part name="parameters" element="ns0:wsRankingCategorias"/>
+    </wsdl:message>
+    <wsdl:message name="wsRankingCategoriasResponse">
+        <wsdl:part name="parameters" element="ns0:RankingCategorias"/>
+    </wsdl:message>
+    <wsdl:portType name="consultasEspecialesProductosPortType">
+        <wsdl:operation name="wsBuscarProductosXDescripcion">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsBuscarProductosXDescripcionRequest" wsaw:Action="urn:wsBuscarProductosXDescripcion"/>
+            <wsdl:output message="ns0:wsBuscarProductosXDescripcionResponse" wsaw:Action="urn:wsBuscarProductosXDescripcionResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsBuscarProductosXDescripcionDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductosXNombre">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsBuscarproductosXNombreRequest" wsaw:Action="urn:wsBuscarproductosXNombre"/>
+            <wsdl:output message="ns0:wsBuscarproductosXNombreResponse" wsaw:Action="urn:wsBuscarproductosXNombreResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsBuscarproductosXNombreDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingProductos">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsRankingProductosRequest" wsaw:Action="urn:wsRankingProductos"/>
+            <wsdl:output message="ns0:wsRankingProductosResponse" wsaw:Action="urn:wsRankingProductosResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsRankingProductosDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductoXID">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsBuscarproductoXIDRequest" wsaw:Action="urn:wsBuscarproductoXID"/>
+            <wsdl:output message="ns0:wsBuscarproductoXIDResponse" wsaw:Action="urn:wsBuscarproductoXIDResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsBuscarproductoXIDDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingCategorias">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsRankingCategoriasRequest" wsaw:Action="urn:wsRankingCategorias"/>
+            <wsdl:output message="ns0:wsRankingCategoriasResponse" wsaw:Action="urn:wsRankingCategoriasResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsRankingCategoriasDataServiceFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="consultasEspecialesProductosSOAP11Binding" type="ns0:consultasEspecialesProductosPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsBuscarProductosXDescripcion">
+            <soap:operation soapAction="urn:wsBuscarProductosXDescripcion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductosXNombre">
+            <soap:operation soapAction="urn:wsBuscarproductosXNombre" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingProductos">
+            <soap:operation soapAction="urn:wsRankingProductos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductoXID">
+            <soap:operation soapAction="urn:wsBuscarproductoXID" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingCategorias">
+            <soap:operation soapAction="urn:wsRankingCategorias" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="consultasEspecialesProductosSOAP12Binding" type="ns0:consultasEspecialesProductosPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsBuscarProductosXDescripcion">
+            <soap12:operation soapAction="urn:wsBuscarProductosXDescripcion" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductosXNombre">
+            <soap12:operation soapAction="urn:wsBuscarproductosXNombre" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingProductos">
+            <soap12:operation soapAction="urn:wsRankingProductos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductoXID">
+            <soap12:operation soapAction="urn:wsBuscarproductoXID" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingCategorias">
+            <soap12:operation soapAction="urn:wsRankingCategorias" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="consultasEspecialesProductosHttpBinding" type="ns0:consultasEspecialesProductosPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="wsBuscarProductosXDescripcion">
+            <http:operation location="wsBuscarProductosXDescripcion"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductosXNombre">
+            <http:operation location="wsBuscarproductosXNombre"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingProductos">
+            <http:operation location="wsRankingProductos"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsBuscarproductoXID">
+            <http:operation location="wsBuscarproductoXID"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsRankingCategorias">
+            <http:operation location="wsRankingCategorias"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="consultasEspecialesProductos">
+        <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:consultasEspecialesProductosSOAP11Binding">
+            <soap:address location="https://10.85.0.103:9443/services/consultasEspecialesProductos.SecureSOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SOAP11Endpoint" binding="ns0:consultasEspecialesProductosSOAP11Binding">
+            <soap:address location="http://10.85.0.103:9763/services/consultasEspecialesProductos.SOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:consultasEspecialesProductosSOAP12Binding">
+            <soap12:address location="https://10.85.0.103:9443/services/consultasEspecialesProductos.SecureSOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SOAP12Endpoint" binding="ns0:consultasEspecialesProductosSOAP12Binding">
+            <soap12:address location="http://10.85.0.103:9763/services/consultasEspecialesProductos.SOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureHTTPEndpoint" binding="ns0:consultasEspecialesProductosHttpBinding">
+            <http:address location="https://10.85.0.103:9443/services/consultasEspecialesProductos.SecureHTTPEndpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HTTPEndpoint" binding="ns0:consultasEspecialesProductosHttpBinding">
+            <http:address location="http://10.85.0.103:9763/services/consultasEspecialesProductos.HTTPEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

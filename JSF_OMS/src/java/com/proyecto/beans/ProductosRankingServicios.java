@@ -37,7 +37,7 @@ public class ProductosRankingServicios implements java.io.Serializable{
     
     @PostConstruct
     public void init(){
-        listaPorRankingList = this.listaPorRankingList;
+        listaPorRankingList = this.listaPorRankingListX();
     }
     
     
@@ -57,14 +57,14 @@ public class ProductosRankingServicios implements java.io.Serializable{
         this.fechaFinal = fechaFinal;
     }
     
-    public List<RankingProducto> listaPorRankingList()
+    public List<RankingProducto> listaPorRankingListX()
     {
         //System.out.println(fechaInicio.toString());
         //System.out.println(fechaFinal.toString());
         try{
             List<RankingProducto> lista = new ArrayList<>();
-            listaPorRankingList = wsRankingProductos(fechaInicio, fechaFinal);
-            
+            //listaPorRankingList = wsRankingProductos(fechaInicio, fechaFinal);
+            listaPorRankingList = wsRankingProductos("01-01-2014","01-01-2017");
             for(RankingProducto rankingProducto : listaPorRankingList){
                 System.out.println("Prod: " + rankingProducto.getPRODID());
             }
@@ -82,11 +82,12 @@ public class ProductosRankingServicios implements java.io.Serializable{
     private java.util.List<com.pica.dss.productos.RankingProducto> 
         wsRankingProductos(java.lang.String fechaInicio, java.lang.String fechaFinal) throws DataServiceFault {
         //com.pica.dss.productos.ConsultasEspecialesProductos service = new com.pica.dss.productos.ConsultasEspecialesProductos();
-        com.pica.dss.productos.ConsultasEspecialesProductosPortType port = service.getSOAP11Endpoint();
+        com.pica.dss.productos.ConsultasEspecialesProductosPortType port = service.getSOAP11Endpoint();//.getSOAP12Endpoint();// .getSOAP11Endpoint();
         return port.wsRankingProductos(fechaInicio, fechaFinal);
     }
 
-    public List<RankingProducto> getListaPorRankingList() {
+    public List<RankingProducto> getListaPorRankingList() 
+    {
         return listaPorRankingList;
     }
 

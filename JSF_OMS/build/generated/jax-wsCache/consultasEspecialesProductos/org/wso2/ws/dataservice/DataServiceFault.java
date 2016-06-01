@@ -14,32 +14,32 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="current_params" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="current_request_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="nested_exception" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="source_data_service"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                   &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="ds_code" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="current_params" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="current_request_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="nested_exception" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="source_data_service">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *         &lt;element name="ds_code" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 
@@ -193,18 +193,18 @@ public class DataServiceFault {
      * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
      * 
      * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *         &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="default_namespace" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="data_service_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
      * </pre>
      * 
      * 

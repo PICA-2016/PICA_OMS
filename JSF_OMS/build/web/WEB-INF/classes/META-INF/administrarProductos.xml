@@ -1,0 +1,303 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://pica.com/dss/Productos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://pica.com/dss/Productos">
+    <wsdl:documentation/>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://pica.com/dss/Productos">
+            <xs:element name="wsActualizarProducto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PRODUCTO_ID" nillable="true" type="xs:int"/>
+                        <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                        <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                        <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                        <xs:element name="PRECIO_LISTA" nillable="true" type="xs:int"/>
+                        <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                        <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="grpProductos" type="ns0:grpProductos"/>
+            <xs:complexType name="grpProductos">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="Producto" type="ns0:Producto"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Producto">
+                <xs:sequence>
+                    <xs:element name="CODRESPUESTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="MSNRESPUESTA" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsConsultaListaProducto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="NUMERO_PAGINA" nillable="true" type="xs:int"/>
+                        <xs:element name="TAMANO_PAGINA" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wsInsertarProducto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                        <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                        <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                        <xs:element name="PRECIO_LISTA" nillable="true" type="xs:int"/>
+                        <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                        <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wsEliminarProducto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PRODUCTO_ID" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+            <xs:element name="DataServiceFault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="current_params" type="xs:string"/>
+                        <xs:element name="current_request_name" type="xs:string"/>
+                        <xs:element name="nested_exception" type="xs:string"/>
+                        <xs:element name="source_data_service">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="location" type="xs:string"/>
+                                    <xs:element name="default_namespace" type="xs:string"/>
+                                    <xs:element name="description" type="xs:string"/>
+                                    <xs:element name="data_service_name" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ds_code" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="REQUEST_STATUS" type="xs:string"/>
+            <xs:element name="DATA_SERVICE_RESPONSE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="wsActualizarProductoRequest">
+        <wsdl:part name="parameters" element="ns0:wsActualizarProducto"/>
+    </wsdl:message>
+    <wsdl:message name="wsActualizarProductoResponse">
+        <wsdl:part name="parameters" element="ns0:grpProductos"/>
+    </wsdl:message>
+    <wsdl:message name="DataServiceFault">
+        <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultaListaProductoRequest">
+        <wsdl:part name="parameters" element="ns0:wsConsultaListaProducto"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultaListaProductoResponse">
+        <wsdl:part name="parameters" element="ns0:grpProductos"/>
+    </wsdl:message>
+    <wsdl:message name="wsInsertarProductoRequest">
+        <wsdl:part name="parameters" element="ns0:wsInsertarProducto"/>
+    </wsdl:message>
+    <wsdl:message name="wsInsertarProductoResponse">
+        <wsdl:part name="parameters" element="ns0:grpProductos"/>
+    </wsdl:message>
+    <wsdl:message name="wsEliminarProductoRequest">
+        <wsdl:part name="parameters" element="ns0:wsEliminarProducto"/>
+    </wsdl:message>
+    <wsdl:message name="wsEliminarProductoResponse">
+        <wsdl:part name="parameters" element="ns0:grpProductos"/>
+    </wsdl:message>
+    <wsdl:portType name="administrarProductosPortType">
+        <wsdl:operation name="wsActualizarProducto">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsActualizarProductoRequest" wsaw:Action="urn:wsActualizarProducto"/>
+            <wsdl:output message="ns0:wsActualizarProductoResponse" wsaw:Action="urn:wsActualizarProductoResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsActualizarProductoDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaListaProducto">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsConsultaListaProductoRequest" wsaw:Action="urn:wsConsultaListaProducto"/>
+            <wsdl:output message="ns0:wsConsultaListaProductoResponse" wsaw:Action="urn:wsConsultaListaProductoResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsConsultaListaProductoDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarProducto">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsInsertarProductoRequest" wsaw:Action="urn:wsInsertarProducto"/>
+            <wsdl:output message="ns0:wsInsertarProductoResponse" wsaw:Action="urn:wsInsertarProductoResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsInsertarProductoDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsEliminarProducto">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsEliminarProductoRequest" wsaw:Action="urn:wsEliminarProducto"/>
+            <wsdl:output message="ns0:wsEliminarProductoResponse" wsaw:Action="urn:wsEliminarProductoResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsEliminarProductoDataServiceFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="administrarProductosSOAP11Binding" type="ns0:administrarProductosPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsActualizarProducto">
+            <soap:operation soapAction="urn:wsActualizarProducto" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaListaProducto">
+            <soap:operation soapAction="urn:wsConsultaListaProducto" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarProducto">
+            <soap:operation soapAction="urn:wsInsertarProducto" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsEliminarProducto">
+            <soap:operation soapAction="urn:wsEliminarProducto" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="administrarProductosSOAP12Binding" type="ns0:administrarProductosPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsActualizarProducto">
+            <soap12:operation soapAction="urn:wsActualizarProducto" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaListaProducto">
+            <soap12:operation soapAction="urn:wsConsultaListaProducto" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarProducto">
+            <soap12:operation soapAction="urn:wsInsertarProducto" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsEliminarProducto">
+            <soap12:operation soapAction="urn:wsEliminarProducto" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="administrarProductosHttpBinding" type="ns0:administrarProductosPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="wsActualizarProducto">
+            <http:operation location="wsActualizarProducto"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaListaProducto">
+            <http:operation location="wsConsultaListaProducto"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarProducto">
+            <http:operation location="wsInsertarProducto"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsEliminarProducto">
+            <http:operation location="wsEliminarProducto"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="administrarProductos">
+        <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:administrarProductosSOAP11Binding">
+            <soap:address location="https://10.85.0.103:9443/services/administrarProductos.SecureSOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SOAP11Endpoint" binding="ns0:administrarProductosSOAP11Binding">
+            <soap:address location="http://10.85.0.103:9763/services/administrarProductos.SOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:administrarProductosSOAP12Binding">
+            <soap12:address location="https://10.85.0.103:9443/services/administrarProductos.SecureSOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SOAP12Endpoint" binding="ns0:administrarProductosSOAP12Binding">
+            <soap12:address location="http://10.85.0.103:9763/services/administrarProductos.SOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureHTTPEndpoint" binding="ns0:administrarProductosHttpBinding">
+            <http:address location="https://10.85.0.103:9443/services/administrarProductos.SecureHTTPEndpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HTTPEndpoint" binding="ns0:administrarProductosHttpBinding">
+            <http:address location="http://10.85.0.103:9763/services/administrarProductos.HTTPEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

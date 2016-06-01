@@ -402,19 +402,19 @@
             <soap:address location="https://localhost:9443/services/consultasEspecialesProductos.SecureSOAP11Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="SOAP11Endpoint" binding="ns0:consultasEspecialesProductosSOAP11Binding">
-            <soap:address location="http://localhost:9763/services/consultasEspecialesProductos.SOAP11Endpoint/"/>
+            <soap:address location="http://10.85.0.100:9763/services/consultasEspecialesProductos.SOAP11Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:consultasEspecialesProductosSOAP12Binding">
-            <soap12:address location="https://localhost:9443/services/consultasEspecialesProductos.SecureSOAP12Endpoint/"/>
+            <soap12:address location="https://10.85.0.100:9443/services/consultasEspecialesProductos.SecureSOAP12Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="SOAP12Endpoint" binding="ns0:consultasEspecialesProductosSOAP12Binding">
-            <soap12:address location="http://localhost:9763/services/consultasEspecialesProductos.SOAP12Endpoint/"/>
+            <soap12:address location="http://10.85.0.100:9763/services/consultasEspecialesProductos.SOAP12Endpoint/"/>
         </wsdl:port>
         <wsdl:port name="SecureHTTPEndpoint" binding="ns0:consultasEspecialesProductosHttpBinding">
-            <http:address location="https://localhost:9443/services/consultasEspecialesProductos.SecureHTTPEndpoint/"/>
+            <http:address location="https://10.85.0.100:9443/services/consultasEspecialesProductos.SecureHTTPEndpoint/"/>
         </wsdl:port>
         <wsdl:port name="HTTPEndpoint" binding="ns0:consultasEspecialesProductosHttpBinding">
-            <http:address location="http://localhost:9763/services/consultasEspecialesProductos.HTTPEndpoint/"/>
+            <http:address location="http://10.85.0.100:9763/services/consultasEspecialesProductos.HTTPEndpoint/"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

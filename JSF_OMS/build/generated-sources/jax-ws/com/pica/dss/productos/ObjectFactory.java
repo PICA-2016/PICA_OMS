@@ -34,19 +34,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WsActualizarProducto }
-     * 
-     */
-    public WsActualizarProducto createWsActualizarProducto() {
-        return new WsActualizarProducto();
-    }
-
-    /**
      * Create an instance of {@link GrpProductos }
      * 
      */
     public GrpProductos createGrpProductos() {
         return new GrpProductos();
+    }
+
+    /**
+     * Create an instance of {@link WsEliminarProducto }
+     * 
+     */
+    public WsEliminarProducto createWsEliminarProducto() {
+        return new WsEliminarProducto();
     }
 
     /**
@@ -58,19 +58,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link WsActualizarProducto }
+     * 
+     */
+    public WsActualizarProducto createWsActualizarProducto() {
+        return new WsActualizarProducto();
+    }
+
+    /**
      * Create an instance of {@link WsInsertarProducto }
      * 
      */
     public WsInsertarProducto createWsInsertarProducto() {
         return new WsInsertarProducto();
-    }
-
-    /**
-     * Create an instance of {@link WsEliminarProducto }
-     * 
-     */
-    public WsEliminarProducto createWsEliminarProducto() {
-        return new WsEliminarProducto();
     }
 
     /**
