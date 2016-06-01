@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Ranking Clientes Facturación</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Custom CSS -->
+        <link href="css/sb-admin.css" rel="stylesheet" />
+
+        <!-- Morris Charts CSS -->
+        <link href="css/plugins/morris.css" rel="stylesheet" />
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            div.container {
+                width: 80%;
+            }
+            .center_content{
+                text-align: center;
+            }
+        </style>
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">OMS</a>
+                </div>
+                <!-- Top Menu Items -->
+                <ul class="nav navbar-right top-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> USUARIO <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-gear"></i> Configuración</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li>
+                            <a href="faces/index.xhtml"><i class="fa fa-fw fa-file"></i> INICIO</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" data-toggle="collapse" data-target="#productos"><i class="fa fa-fw fa-arrows-v"></i> Admon de Productos <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="productos" class="collapse">
+                                <li>
+                                    <a href="faces/contultar_productos.xhtml">Búsqueda de Productos</a>
+                                </li>
+                                <li>
+                                    <a href="faces/registro_productos.xhtml">Registro de Productos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#campanhias"><i class="fa fa-fw fa-arrows-v"></i> Admon de Campañas <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="campanhias" class="collapse">
+                                <li>
+                                    <a href="faces/listado_campanhias.xhtml">Búsqueda de Campañas</a>
+                                </li>
+                                <li>
+                                    <a href="faces/registrar_campanhias.xhtml">Registro de Campañas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#clientes"><i class="fa fa-fw fa-arrows-v"></i> Admon de Clientes <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="clientes" class="collapse">
+                                <li>
+                                    <a href="faces/contultar_productos.xhtml">Búsqueda de Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="faces/registro_productos.xhtml">Registro de Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="faces/consulta_rankingp.xhtml">Ranking de Productos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="listado_ordenes.xhtml"><i class="fa fa-fw fa-file"></i> Administración Ordenes</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Ranking
+                                <small>Clientes Facturación</small>
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <i class="fa fa-dashboard"></i>  <a href="#">Administración de Ordenes</a>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-file"></i> Ranking Clientes Facturación
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h:dataTable value="#{beanConsultaRankingOrdenesAbiertas.listaOrdenes}" var="o"
+                                 id="example" class="display" cellspacing="0" width="100%"
+                                 >
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Cliente Id</f:facet>
+                            <!-- row record -->
+                            #{o.CUSTID}
+                        </h:column>
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Orden Id</f:facet>
+                            <!-- row record -->
+                            #{o.ORDID}
+                        </h:column>
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Fecha</f:facet>
+                            <!-- row record -->
+                            #{o.ORDERDATE}
+                        </h:column>
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Precio</f:facet>
+                            <!-- row record -->
+                            #{o.PRICE}
+                        </h:column>
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Status</f:facet>
+                            <!-- row record -->
+                            #{o.STATUS}
+                        </h:column>    
+                        <h:column>
+                            <!-- column header -->
+                            <f:facet name="header">Accion</f:facet>
+                            <!-- row record -->
+                                     <span class="fa fa-eye"></span>
+                                    <span class="fa fa-remove"></span>
+                                    <span class="fa fa-edit"></span>
+                        </h:column>   
+                    </h:dataTable>
+
+                    <!-- fin página -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+
+        <!-- Datatable -->
+        <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+        <script src="js/jquery.dataTables.min.js" type="text/javascript" />
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
+
+
+
+    </h:body>
+</html>
+
