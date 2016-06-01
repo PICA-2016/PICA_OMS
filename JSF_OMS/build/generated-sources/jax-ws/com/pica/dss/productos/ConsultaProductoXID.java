@@ -14,23 +14,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="ConsultaProductoXID"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
- *         &lt;element name="PRODUCTO_ID" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
- *         &lt;element name="NOMBRE" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="DESCRIPCION" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="CATEGORIA" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="PRECIO_LISTA" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="FABRICANTE" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="IMAGEN" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="IMAGEN_URL" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
+ * &lt;complexType name="ConsultaProductoXID">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="PRODUCTO_ID" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="NOMBRE" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="DESCRIPCION" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="CATEGORIA" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="PRECIO_LISTA" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="FABRICANTE" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="IMAGEN" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="IMAGEN_URL" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
  * </pre>
  * 
  * 

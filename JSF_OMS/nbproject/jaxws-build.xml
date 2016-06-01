@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-consultasEspecialesProductos" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos" destdir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/consultasEspecialesProductos/wsdl/localhost_9763/services/consultasEspecialesProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9763/services/consultasEspecialesProductos?wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos" destdir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/consultasEspecialesProductos/wsdl/localhost_9763/services/consultasEspecialesProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.85.0.100:9763/services/consultasEspecialesProductos?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/consultasEspecialesProductos/wsdl/localhost_9763/services/consultasEspecialesProductos.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/consultasEspecialesProductos"/>
         </wsimport>
@@ -44,7 +44,7 @@
     </target>
     <target name="wsimport-client-administrarProductos" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarProductos" destdir="${build.generated.dir}/jax-wsCache/administrarProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.85.0.103:9763/services/administrarProductos?wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarProductos" destdir="${build.generated.dir}/jax-wsCache/administrarProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.85.0.100:9766/services/administrarProductos?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administrarProductos/wsdl/10.85.0.103_9763/services/administrarProductos.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
         </wsimport>
@@ -58,5 +58,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/pica/dss/productos"/>
         <delete dir="${build.generated.dir}/jax-wsCache/administrarProductos"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-consultasEspecialesProductos, wsimport-client-administrarProductos"/>
+    <target name="wsimport-client-administrarCampanas" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/administrarCampanas"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarCampanas" destdir="${build.generated.dir}/jax-wsCache/administrarCampanas" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarCampanas/wsdl/10.85.0.100_9766/services/administrarCampanas.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://10.85.0.100:9766/services/administrarCampanas?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administrarCampanas/wsdl/10.85.0.100_9766/services/administrarCampanas.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/administrarCampanas"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/administrarCampanas">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-administrarCampanas" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/pica/dss/campanas"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/administrarCampanas"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-consultasEspecialesProductos, wsimport-client-administrarProductos, wsimport-client-administrarCampanas"/>
 </project>

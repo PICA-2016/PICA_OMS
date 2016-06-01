@@ -1,0 +1,413 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://pica.com/dss/Campanas" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://pica.com/dss/Campanas">
+    <wsdl:documentation/>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://pica.com/dss/Campanas">
+            <xs:element name="wsActualizarCampana">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="IDCAMPANA" nillable="true" type="xs:int"/>
+                        <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                        <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                        <xs:element name="FECHAVENCIMIENTO" nillable="true" type="xs:string"/>
+                        <xs:element name="ESTADO" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CampanasAct" type="ns0:CampanasAct"/>
+            <xs:complexType name="CampanasAct">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="CampanaAct" type="ns0:CampanaAct"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CampanaAct">
+                <xs:sequence>
+                    <xs:element name="CODRESPUESTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="MSNRESPUESTA" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsInsertarCampana">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                        <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                        <xs:element name="FECHAINI" nillable="true" type="xs:string"/>
+                        <xs:element name="FECHAVENCIMIENTO" nillable="true" type="xs:string"/>
+                        <xs:element name="ESTADO" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CampanasInsert" type="ns0:CampanasInsert"/>
+            <xs:complexType name="CampanasInsert">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="CampanaInsert" type="ns0:CampanaInsert"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CampanaInsert">
+                <xs:sequence>
+                    <xs:element name="IDCAMPANA" nillable="true" type="xs:integer"/>
+                    <xs:element name="CODRESPUESTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="MSNRESPUESTA" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsConsultaCampana">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ESTADO" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CampanasCons" type="ns0:CampanasCons"/>
+            <xs:complexType name="CampanasCons">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="CampanaCons" type="ns0:CampanaCons"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CampanaCons">
+                <xs:sequence>
+                    <xs:element name="IDCAMPANA" nillable="true" type="xs:integer"/>
+                    <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                    <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                    <xs:element name="FECHAINI" nillable="true" type="xs:dateTime"/>
+                    <xs:element name="FECHAVENCIMIENTO" nillable="true" type="xs:dateTime"/>
+                    <xs:element name="ESTADO" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsConsultarProductosXCampana">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="IDCAMPANA" nillable="true" type="xs:int"/>
+                        <xs:element name="ESTADO" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CampanasConXPro" type="ns0:CampanasConXPro"/>
+            <xs:complexType name="CampanasConXPro">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="CampanaConXPro" type="ns0:CampanaConXPro"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CampanaConXPro">
+                <xs:sequence>
+                    <xs:element name="ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="PRODUCTO_ID" nillable="true" type="xs:integer"/>
+                    <xs:element name="NOMBRE" nillable="true" type="xs:string"/>
+                    <xs:element name="DESCRIPCION" nillable="true" type="xs:string"/>
+                    <xs:element name="CATEGORIA" nillable="true" type="xs:string"/>
+                    <xs:element name="PRECIO_LISTA" nillable="true" type="xs:string"/>
+                    <xs:element name="FABRICANTE" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN" nillable="true" type="xs:string"/>
+                    <xs:element name="IMAGEN_URL" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="wsInsertaProductoCampana">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="IDPRODUCTO" nillable="true" type="xs:int"/>
+                        <xs:element name="IDCAMPANA" nillable="true" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CampanasInsPC" type="ns0:CampanasInsPC"/>
+            <xs:complexType name="CampanasInsPC">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="CampanaInsPC" type="ns0:CampanaInsPC"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CampanaInsPC">
+                <xs:sequence>
+                    <xs:element name="CODRESPUESTA" nillable="true" type="xs:integer"/>
+                    <xs:element name="MSNRESPUESTA" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+            <xs:element name="DataServiceFault">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="current_params" type="xs:string"/>
+                        <xs:element name="current_request_name" type="xs:string"/>
+                        <xs:element name="nested_exception" type="xs:string"/>
+                        <xs:element name="source_data_service">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="location" type="xs:string"/>
+                                    <xs:element name="default_namespace" type="xs:string"/>
+                                    <xs:element name="description" type="xs:string"/>
+                                    <xs:element name="data_service_name" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ds_code" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="REQUEST_STATUS" type="xs:string"/>
+            <xs:element name="DATA_SERVICE_RESPONSE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="wsInsertaProductoCampanaRequest">
+        <wsdl:part name="parameters" element="ns0:wsInsertaProductoCampana"/>
+    </wsdl:message>
+    <wsdl:message name="wsInsertaProductoCampanaResponse">
+        <wsdl:part name="parameters" element="ns0:CampanasInsPC"/>
+    </wsdl:message>
+    <wsdl:message name="DataServiceFault">
+        <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+    </wsdl:message>
+    <wsdl:message name="wsInsertarCampanaRequest">
+        <wsdl:part name="parameters" element="ns0:wsInsertarCampana"/>
+    </wsdl:message>
+    <wsdl:message name="wsInsertarCampanaResponse">
+        <wsdl:part name="parameters" element="ns0:CampanasInsert"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultarProductosXCampanaRequest">
+        <wsdl:part name="parameters" element="ns0:wsConsultarProductosXCampana"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultarProductosXCampanaResponse">
+        <wsdl:part name="parameters" element="ns0:CampanasConXPro"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultaCampanaRequest">
+        <wsdl:part name="parameters" element="ns0:wsConsultaCampana"/>
+    </wsdl:message>
+    <wsdl:message name="wsConsultaCampanaResponse">
+        <wsdl:part name="parameters" element="ns0:CampanasCons"/>
+    </wsdl:message>
+    <wsdl:message name="wsActualizarCampanaRequest">
+        <wsdl:part name="parameters" element="ns0:wsActualizarCampana"/>
+    </wsdl:message>
+    <wsdl:message name="wsActualizarCampanaResponse">
+        <wsdl:part name="parameters" element="ns0:CampanasAct"/>
+    </wsdl:message>
+    <wsdl:portType name="administrarCampanasPortType">
+        <wsdl:operation name="wsInsertaProductoCampana">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsInsertaProductoCampanaRequest" wsaw:Action="urn:wsInsertaProductoCampana"/>
+            <wsdl:output message="ns0:wsInsertaProductoCampanaResponse" wsaw:Action="urn:wsInsertaProductoCampanaResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsInsertaProductoCampanaDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarCampana">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsInsertarCampanaRequest" wsaw:Action="urn:wsInsertarCampana"/>
+            <wsdl:output message="ns0:wsInsertarCampanaResponse" wsaw:Action="urn:wsInsertarCampanaResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsInsertarCampanaDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultarProductosXCampana">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsConsultarProductosXCampanaRequest" wsaw:Action="urn:wsConsultarProductosXCampana"/>
+            <wsdl:output message="ns0:wsConsultarProductosXCampanaResponse" wsaw:Action="urn:wsConsultarProductosXCampanaResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsConsultarProductosXCampanaDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaCampana">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsConsultaCampanaRequest" wsaw:Action="urn:wsConsultaCampana"/>
+            <wsdl:output message="ns0:wsConsultaCampanaResponse" wsaw:Action="urn:wsConsultaCampanaResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsConsultaCampanaDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="wsActualizarCampana">
+            <wsdl:documentation/>
+            <wsdl:input message="ns0:wsActualizarCampanaRequest" wsaw:Action="urn:wsActualizarCampana"/>
+            <wsdl:output message="ns0:wsActualizarCampanaResponse" wsaw:Action="urn:wsActualizarCampanaResponse"/>
+            <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:wsActualizarCampanaDataServiceFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="administrarCampanasSOAP11Binding" type="ns0:administrarCampanasPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsInsertaProductoCampana">
+            <soap:operation soapAction="urn:wsInsertaProductoCampana" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarCampana">
+            <soap:operation soapAction="urn:wsInsertarCampana" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultarProductosXCampana">
+            <soap:operation soapAction="urn:wsConsultarProductosXCampana" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaCampana">
+            <soap:operation soapAction="urn:wsConsultaCampana" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsActualizarCampana">
+            <soap:operation soapAction="urn:wsActualizarCampana" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="administrarCampanasSOAP12Binding" type="ns0:administrarCampanasPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="wsInsertaProductoCampana">
+            <soap12:operation soapAction="urn:wsInsertaProductoCampana" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarCampana">
+            <soap12:operation soapAction="urn:wsInsertarCampana" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultarProductosXCampana">
+            <soap12:operation soapAction="urn:wsConsultarProductosXCampana" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaCampana">
+            <soap12:operation soapAction="urn:wsConsultaCampana" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="wsActualizarCampana">
+            <soap12:operation soapAction="urn:wsActualizarCampana" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="administrarCampanasHttpBinding" type="ns0:administrarCampanasPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="wsInsertaProductoCampana">
+            <http:operation location="wsInsertaProductoCampana"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsInsertarCampana">
+            <http:operation location="wsInsertarCampana"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultarProductosXCampana">
+            <http:operation location="wsConsultarProductosXCampana"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsConsultaCampana">
+            <http:operation location="wsConsultaCampana"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="wsActualizarCampana">
+            <http:operation location="wsActualizarCampana"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="administrarCampanas">
+        <wsdl:port name="SOAP11Endpoint" binding="ns0:administrarCampanasSOAP11Binding">
+            <soap:address location="http://10.85.0.108:9766/services/administrarCampanas.SOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:administrarCampanasSOAP11Binding">
+            <soap:address location="https://10.85.0.108:9446/services/administrarCampanas.SecureSOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:administrarCampanasSOAP12Binding">
+            <soap12:address location="https://10.85.0.108:9446/services/administrarCampanas.SecureSOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SOAP12Endpoint" binding="ns0:administrarCampanasSOAP12Binding">
+            <soap12:address location="http://10.85.0.108:9766/services/administrarCampanas.SOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HTTPEndpoint" binding="ns0:administrarCampanasHttpBinding">
+            <http:address location="http://10.85.0.108:9766/services/administrarCampanas.HTTPEndpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureHTTPEndpoint" binding="ns0:administrarCampanasHttpBinding">
+            <http:address location="https://10.85.0.108:9446/services/administrarCampanas.SecureHTTPEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
